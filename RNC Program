@@ -1,0 +1,42 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main ()
+{
+
+    ifstream inputFile; 
+    inputFile.open("Random.txt");
+    int number, sum, count, avg; 
+      
+
+    if (inputFile) 
+        {
+
+            count = 0; 
+            sum = 0; 
+            avg = 0;
+
+            while ( inputFile >> number) 
+            {
+                count++;
+                sum += number;
+            }
+
+            avg = ( sum / count ); 
+
+            cout << "Number of Numbers: " << count << endl;
+            cout << "Sum of the Numbers: " << sum << endl; 
+            cout << "Average of the Numbers: " << avg << endl;  
+
+            inputFile.close();  
+            
+                
+        } 
+        else 
+        {
+            cout << "Error opening the file.\n"; 
+        }       
+    return 0;
+}
